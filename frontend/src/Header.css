@@ -1,0 +1,44 @@
+.navtitle{
+    
+   
+position: relative;
+left: 0%;
+top: 32%;
+padding-top: 0%;
+margin-top: 0%;
+
+}
+.navlinks{
+    position: relative;
+    top: -27%;
+    left: 33%;
+}
+.navbar{
+ margin-bottom: 40px;
+ padding-bottom: 10px;
+    height: 120px;
+    
+}
+.login:hover{
+    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+
+.login{
+    position: relative;
+    right: 50px;
+    transform: scale(1.5);
+    color: rgba(0, 0, 0, 0.418);
+}
+.cart{
+    position: relative;
+    right: 10px;
+    transform: scale(1.5);
+    color: rgba(0, 0, 0, 0.418); 
+}
+.cart:hover{
+    transition: 0.5s;
+    color: rgb(0, 0, 0);
+}
+

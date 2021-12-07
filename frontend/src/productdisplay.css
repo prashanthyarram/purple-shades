@@ -1,0 +1,148 @@
+.imagescroller{
+    height: 600px;
+    
+    margin: 70px;
+}
+.item{
+    height: 600px;
+}
+.container .star-widget input{
+    display: none;
+}
+
+.price{
+    margin-left: 70px ;
+    margin-bottom: 20px;
+}
+.price h3{
+    font-weight: bold;
+}
+.price h6{
+    text-decoration: line-through;
+}
+
+.productdescription{
+    padding-left: 50px;
+    padding-right: 45px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.productdetails{
+    padding-left: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding-right:50px;
+}
+.container{
+    width: 200px;
+    height: 300px;
+    
+    padding: 20px 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ 
+}
+
+input:not(:checked)~ label:hover,
+input:not(:checked)~ label:hover~label{
+    color: rgb(224, 178, 24);
+}
+input:checked~label{
+    color: rgb(224, 178, 24);
+}
+input#rate-5:checked~label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+
+.star-widget label{
+    font-size: 40px;
+    color: rgba(124, 123, 114, 0.829);
+   
+    float: right;
+    padding: 10px ;
+    transition: all 0.2s ease;
+   
+}
+form header{
+    width: 100%;
+    font-size: 25px;
+    color: #fe7;
+    font-weight: 500;
+    text-align: center;
+    margin: 5px 0 20px 0;
+    transition: all 0.2s ease;
+}
+form textarea{
+    height: 100px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #333;
+    padding: 10px;
+    font-size: 17px;
+    color: black;
+    resize: none;
+    border-radius: 5px;
+}
+#rate-1:checked ~ form header::before{
+content: "I hated it😭";
+}
+#rate-2:checked ~ form header::before{
+content: "I did'nt like it😣";
+}
+#rate-3:checked ~ form header::before{
+ content: "It was good😌";
+}
+ #rate-4:checked ~ form header::before{
+ content: "I liked it😀";
+}
+#rate-5:checked ~ form header::before{
+content: "I just Loved it😍";
+}
+.submit button{
+    width: 300px;
+    background-color: black;
+    border-radius: 5px;
+}
+.productratings{
+  display: block;
+  height: 130px;
+  padding: 20px;
+  margin: 20px;
+
+}
+.productratings i{
+    font-size: 40px;
+    color: rgb(248, 227, 70);
+    float: left;
+    padding: 10px ;
+   
+
+}
+.rating h4{
+    position: relative;
+    font-size: 30px;
+    padding: 10px;
+    left: -270px;
+    top: 40px;
+}
+
+.rating a{
+    position: relative;
+    top: 20px;
+    margin: 10px;
+}
+
+.usercomment .usernameincomments{
+margin: 3%;
+}
+.usercomment p{
+margin: 2%;  
+}
+.usercomment h5{
+margin: 2%;
+}

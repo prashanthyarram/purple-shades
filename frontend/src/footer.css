@@ -1,0 +1,17 @@
+.footer{
+    position: relative;
+    
+    bottom: 0%;
+    padding: 100px;
+    padding-top: 50px;
+}
+.footertitle{
+    transform: scale(0.9);
+    padding-left: 400px;
+}
+.copy{
+    bottom: -90px;
+    
+    padding-left: 420px;
+    position: relative;
+}

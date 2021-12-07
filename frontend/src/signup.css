@@ -1,0 +1,17 @@
+.Signinform{
+    width: 500px;
+    background-color: rgba(227, 236, 236, 0.63);
+    padding: 50px;
+    position: relative;
+    margin-left: 370px;
+    margin-bottom: 100px;
+}
+.signup{
+    margin-left: 170px;
+}
+.Heading{
+position: relative;
+color: rgba(96, 111, 117, 0.856);
+margin: 50px;
+margin-left: 510px;
+}
