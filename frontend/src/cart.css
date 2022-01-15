@@ -1,0 +1,172 @@
+.cartitem{
+    display: flex;
+    height: 180px;
+    width: 60%;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.cartimage{
+    position: relative;
+    height: 160px;
+}
+.itemprice{
+    position: relative;
+    top: 130px;
+    left: 20px;
+
+}
+.deletebtn{
+    position: relative;
+    height: 30px;
+    top: 130px;
+    left: 300px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: none;
+    align-items: center;
+    border-radius: 10px;
+}
+.dropdwn {
+   position: relative;
+   left: 350px;
+  
+}
+.sizeselected{
+    position: relative;
+    top: 130px;
+    left: 50px; 
+}
+.name{
+    color: black;
+    position: absolute;
+    left: 200px;
+}
+.navbar{
+    background-color: black;
+    height: 50px;
+    color: white;
+    align-items: center;
+    position: fixed;
+    
+}
+.navtext{
+    align-content: center;
+    text-align: center;
+    position: fixed;
+    left: 550px;
+}
+.shoppingcart{
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    margin-bottom: 50px;
+    position: relative;
+    left: 460px;
+}
+.totalprice{
+    padding: 15px;
+    position: fixed;
+    top: 70px;
+    left: 800px;
+    width: 400px;
+    height: 490px;
+    
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+    
+
+.totalpriceno{
+    width: 380px;
+    padding: 10px;
+text-align: right;
+position: absolute;
+bottom: 160px;
+}
+.itemlist{
+    align-items: center;
+    padding-left: 50px;
+}
+.checkout{
+    
+    position: relative;
+    left: 130px;
+    font-size: larger;
+    margin-bottom: 50px;
+}
+
+.checkoutbtn:enabled{
+    color: whitesmoke;
+    position: absolute;
+    background-color: black;
+    width: 350px;
+    height: 45px;
+    bottom: 110px;
+    left: 25px;
+    border: none;
+}
+.checkoutbtn:disabled{
+    color: rgba(136, 132, 132, 0.904);
+    position: absolute;
+    cursor: not-allowed;
+    background: #dddddd;
+    width: 350px;
+    height: 45px;
+    bottom: 110px;
+    left: 25px;
+    border: none;
+}
+.refund{
+    position: absolute;
+    bottom: 5px;
+    left: 100px;
+    text-decoration: none;
+    color: black;
+}
+.logos{
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    transform: scale(0.8);
+}
+.innerdiv{
+    border: 1px solid black;
+    
+}
+.goshopping{
+    text-decoration: none;
+    color: white;
+}
+.noproducts{
+    position: relative;
+    margin-left: 50px;
+    width: 400px;
+    height: 225px;
+    top: 140px;
+    left: 160px;
+}
+.noproducttext{
+    text-align: center;
+    color: rgba(238, 115, 115, 0.911);
+
+}
+.nocartimg{
+    transform: scale(6);
+    position: relative;
+    left: 400px;
+    top: 60px;
+    color: rgba(238, 115, 115, 0.911);
+    
+}
+.noproductbtn{
+    color: white;
+    position: absolute;
+    background-color: rgb(157, 112, 187);
+    width: 350px;
+    height: 45px;
+    bottom: 110px;
+    left: 25px;
+    border: none;
+    border-radius: 5px;
+}

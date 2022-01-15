@@ -11,3 +11,127 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.messagebox{
+  border: 1px black solid;
+  background-color: rgba(255, 0, 0, 0.555);
+  padding: 10px;
+  color: black;
+  font-size: medium;
+  align-items: center;
+}
+.userInfo{
+  position: inherit;
+  border-radius: 40px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+background-color:rgb(241, 239, 235);
+margin: 50px;
+display: flexbox;
+height: 340px;
+width: 500px;
+margin-left: 400px;
+}
+.userInfo h3{
+  position: absolute;
+  left: 550px;
+}
+
+.userInfo h6{
+  position: absolute;
+  top: 390px;
+  left: 575px;
+}
+#currentlabel{
+  position: absolute;
+  top: 450px;
+  left: 550px;
+}
+#current{
+  border: none;
+  position: absolute;
+  top: 480px;
+  left: 550px;
+}
+#newlabel{
+  position: absolute;
+  top: 520px;
+  left: 550px;
+}
+#new{
+  border: none;
+  position: absolute;
+  top: 550px;
+  left: 550px;
+}  
+#reenternewlabel{
+  position: absolute;
+  top: 590px;
+  left: 550px;
+}
+#reenternew{
+  border: none;
+  position: absolute;
+  top: 620px;
+  left: 550px;
+}
+.signout{
+  position: absolute;
+  bottom: -150px;
+  right: 80px;
+}
+.change{
+  position: absolute;
+  bottom: -120px;
+  right: 540px;
+}
+#name{
+margin-left: 550px;
+}
+#email{
+  margin-left: 550px;
+}
+.usr h5{
+  margin-left: 570px;
+}
+.usr button{
+  margin-left: 570px;
+}
+.truebaby{
+  display: block;
+  text-decoration: none;
+  position: relative;
+  border: none;
+  color: white;
+  background-color: blueviolet;
+  width: 400px;
+  left: 450px;
+  margin-bottom: 50px;
+  height: 40px;
+  border-radius: 10px;
+}
+.falsebaby{
+  display: none;
+  text-decoration: none;
+}
+.tru{
+  display: block;
+}
+.fal{
+  display: none;
+}
+.productupload{
+  margin: 100px;
+  border-radius: 20px;
+  
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 100px;
+}
+.label{
+  margin-bottom: 30px;
+}
+.form{
+  margin-bottom: 30px;
+}
+.registerdetails{
+  margin: 100px;
+  text-align: left;
+}

@@ -1,23 +1,42 @@
-.navtitle{
+.navbar1{
+    display: flex;
+    top: 0%;
+    position: relative;
+    height: 120px;
+    background: rgb(207,153,224);
+    background: linear-gradient(180deg, rgba(207,153,224,1) 16%, rgba(220,193,228,1) 46%, rgba(255,255,255,1) 77%);
+    justify-content: center;
+    z-index: 2;
+}
+.you1{
+    text-decoration: none;
+}
+.navtitle1{
+    color: black;
     
-   
-position: relative;
-left: 0%;
-top: 32%;
-padding-top: 0%;
-margin-top: 0%;
+    top: 20px;
+    position: relative;
+    left: 250px;
+}
+
+
+.navlinks1{
+    list-style: none;
+    position: relative;
+    right:105px;
+    top: 80px;
+     list-style-type:none;
+     display: inline-flex;
 
 }
-.navlinks{
-    position: relative;
-    top: -27%;
-    left: 33%;
+.navlinks1 li {
+    display: inline;
+    padding-right: 20px;
+    padding-left: 20px;
 }
-.navbar{
- margin-bottom: 40px;
- padding-bottom: 10px;
-    height: 120px;
-    
+.navlinks1 li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none; 
 }
 .login:hover{
     color: rgb(0, 0, 0);
@@ -26,19 +45,26 @@ margin-top: 0%;
 
 
 .login{
-    position: relative;
-    right: 50px;
+    position: absolute;
+    right: 70px;
+    top: 19px;
     transform: scale(1.5);
     color: rgba(0, 0, 0, 0.418);
 }
 .cart{
-    position: relative;
-    right: 10px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
     transform: scale(1.5);
     color: rgba(0, 0, 0, 0.418); 
 }
 .cart:hover{
     transition: 0.5s;
     color: rgb(0, 0, 0);
+}
+.ut{
+    position: absolute;
+    right: 5px;
+    transform: scale(0.8);
 }
 

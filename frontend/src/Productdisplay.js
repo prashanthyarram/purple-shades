@@ -1,5 +1,5 @@
-import data from './data'
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import Button from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -10,28 +10,49 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 export default function Productdisplay(props) {
 
-  const product = data.products.find((x) => x.id === props.match.params.id);
-  if (!product) {
-    return <div> Product Not Found</div>;
-  }
+
+  const _id=props.match.params._id;
+
+  const [product, setproduct] = useState([])
+  useEffect(() => {
+    const fetchdata=async ()=>{
+        const {data}=await axios.get(`/api/products/${_id}`);
+        setproduct(data)
+    } 
+      fetchdata();
+  }, [_id])
+
+  
+    const additemtocart=(productid)=>{
+      props.history.push(`/cart/${productid}`);
+    }  
+  
+  //end of add items to cart section
+  const img1=product.img1
+  const img2=product.img2
+  const img3=product.img3
+  const img4=product.img4
+
   return (
     <>
 
       <Carousel variant="dark" className='imagescroller'>
 
         <Carousel.Item className='item'>
+          <div>
           <img
             className="d-block rounded mx-auto d-block h-100"
-            src={product.img1}
+            src={img1}
             alt="First slide"
           />
+          </div>
         </Carousel.Item>
 
 
         <Carousel.Item className='item'>
           <img
             className="d-block rounded mx-auto d-block h-100"
-            src={product.img2}
+            src={img2}
             alt="Second slide"
           />
         </Carousel.Item>
@@ -40,7 +61,7 @@ export default function Productdisplay(props) {
         <Carousel.Item className='item'>
           <img
             className="d-block rounded mx-auto d-block h-100"
-            src={product.img3}
+            src={img3}
             alt="Third slide"
           />
         </Carousel.Item>
@@ -50,24 +71,22 @@ export default function Productdisplay(props) {
         <Carousel.Item className='item' >
           <img
             className="d-block rounded mx-auto d-block h-100 "
-            src={product.img4}
-            alt="First slide"
+            src={img4}
+            alt="Fourth slide"
           />
         </Carousel.Item>
-
-
+ 
       </Carousel>
       <div className="price">
         <h3>
-          Price: ₹{product.Price}
+          Price: ₹{product.price}
         </h3>
-        <h6>₹{product.ActualPrice}</h6>
+        <h6>₹{product.actualprice}</h6>
 
       </div>
 
-
       <div className="d-grid gap-2">
-        <Button className='w-25 mx-auto shadow  mb-4 ' shadow p-4 mb-4 bg-white variant="primary" size="lg">
+        <Button onClick={()=>{additemtocart(product._id)}} className='w-25 mx-auto shadow  mb-4 ' shadow p-4 mb-4 bg-white variant="primary" size="lg">
           Add To Cart
         </Button>
 
@@ -93,14 +112,14 @@ export default function Productdisplay(props) {
       <div className='productdescription'>
         <h2>Product Description</h2>
         <p>
-          {product.Description}
+          {product.description}
         </p>
       </div>
 
       <div className='productdetails'>
         <h2>Product Detailis</h2>
         <p>
-          {product.Details}
+          {product.details}
         </p>
 
       </div>
@@ -114,22 +133,22 @@ export default function Productdisplay(props) {
 
 
         <div className="star-widget">
-          <input type="radio" name="Rating" id="rate-5" />
+          <input type="radio" name="rating" _id="rate-5" />
           <label className="fa fa-star" htmlFor="rate-5"></label>
-          <input type="radio" name="Rating" id="rate-4" />
+          <input type="radio" name="rating" _id="rate-4" />
           <label className="fa fa-star" htmlFor="rate-4"></label>
-          <input type="radio" name="Rating" id="rate-3" />
+          <input type="radio" name="rating" _id="rate-3" />
           <label className="fa fa-star" htmlFor="rate-3"></label>
-          <input type="radio" name="Rating" id="rate-2" />
+          <input type="radio" name="rating" _id="rate-2" />
           <label className="fa fa-star" htmlFor="rate-2"></label>
-          <input type="radio" name="Rating" id="rate-1" />
+          <input type="radio" name="rating" _id="rate-1" />
           <label className="fa fa-star" htmlFor="rate-1"></label>
 
 
           <form className="text1" action="#">
             <header></header>
             <div className="textarea">
-              <textarea name="" id="" cols="30" placeholder="describe your experiencex"></textarea>
+              <textarea name="" _id="" cols="30" placeholder="Describe your Experience.."></textarea>
             </div>
             <div className="submit">
               <Button type="submit">Post</Button>
@@ -149,9 +168,9 @@ export default function Productdisplay(props) {
 
         <span>
           <i className={
-            product.Rating >= 1
+            product.rating >= 1
               ? "fa fa-star"
-              : product.Rating >= 0.5
+              : product.rating >= 0.5
                 ? "fa fa-star-half-o"
                 : "fa fa-star-o"
 
@@ -161,9 +180,9 @@ export default function Productdisplay(props) {
         </span>
         <span>
           <i className={
-            product.Rating >= 2
+            product.rating >= 2
               ? "fa fa-star"
-              : product.Rating >= 1.5
+              : product.rating >= 1.5
                 ? "fa fa-star-half-o"
                 : "fa fa-star-o"
 
@@ -173,9 +192,9 @@ export default function Productdisplay(props) {
         </span>
         <span>
           <i className={
-            product.Rating >= 3
+            product.rating >= 3
               ? "fa fa-star"
-              : product.Rating >= 2.5
+              : product.rating >= 2.5
                 ? "fa fa-star-half-o"
                 : "fa fa-star-o"
 
@@ -185,9 +204,9 @@ export default function Productdisplay(props) {
         </span>
         <span>
           <i className={
-            product.Rating >= 4
+            product.rating >= 4
               ? "fa fa-star"
-              : product.Rating >= 3.5
+              : product.rating >= 3.5
                 ? "fa fa-star-half-o"
                 : "fa fa-star-o"
 
@@ -197,9 +216,9 @@ export default function Productdisplay(props) {
         </span>
         <span>
           <i className={
-            product.Rating >= 5
+            product.rating >= 5
               ? "fa fa-star"
-              : product.Rating >= 4.5
+              : product.rating >= 4.5
                 ? "fa fa-star-half-o"
                 : "fa fa-star-o"
 
@@ -209,11 +228,11 @@ export default function Productdisplay(props) {
         </span>
 
         <h4>
-          {product.Rating} rating
+          {product.rating} rating
         </h4>
 
         <h6>
-          {product.No_of_reviews} Number of ratings
+          {product.numreviews} Number of ratings
         </h6>
         <a href="ratings">View all reviews</a>
       </div>

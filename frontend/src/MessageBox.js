@@ -1,0 +1,10 @@
+import React from 'react'
+
+
+export default function MessageBox(props) {
+    return (
+        <div className='messagebox'>
+            {props.children}
+        </div>
+    )
+}

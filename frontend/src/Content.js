@@ -1,93 +1,58 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./content.css"
-import Productdisplay from './Productdisplay.js'
-import img1 from './images/img1.jpeg'
-import img2 from './images/img2.jpeg'
-import img3 from './images/img3.jpeg'
-import img4 from './images/img4.jpeg'
-import data from'./data'
+import axios from 'axios'
+import Ratings from './Ratings';
+import Loadingbox from './Loadingbox';
+import MessageBox from './MessageBox';
+
 
 export default function Content() {
+
+  const [products, setproducts] = useState([]);
+  const [loading, setloading] = useState(false)
+  const [error, seterror] = useState(false)
+  useEffect(() => {
+    const fetchdata=async ()=>{
+      try{
+      setloading(true)
+      const {data}=await axios.get('/api/products');
+      setloading(false)
+      setproducts(data)
+    } catch(err){
+      seterror(err.message)
+      setloading(false)
+    }
+  } 
+    fetchdata();
+  }, []);
     return (
+      <div>
+      {
+        loading?(
+          <Loadingbox></Loadingbox>
+          )
+        : error?(
+          <MessageBox>{error}</MessageBox>
+        )
+      
+        :
+     
         
-        
-        <div className="productslist grid-container">
+        (
+        <div className="productslist ">
         {
-            data.products.map(product=>(
+            products.map(product=>(
                 
-        <div key={product.id} className="product grid-item">
-      <a href={`/product/${product.id}`}>  
+        <div key={product._id} className="product">
+      <a href={`/api/products/${product._id}`}>  
         <img className="Productimage" src={product.img1} alt="product" />
         </a> 
-        <a className="productname" href={`/product/${product.id}`}>  
+        <a className="productname" href={`/api/products/${product._id}`}>  
         <h5>{product.name}</h5>
         </a> 
-        <h6>₹{product.Price}</h6>
+        <h6>₹{product.price}</h6>
         
-        <div className="ratings">
-        <span>
-          <i className={
-            product.Rating >= 1
-              ? "fa fa-star"
-              : product.Rating >= 0.5
-                ? "fa fa-star-half-o"
-                : "fa fa-star-o"
-
-          }
-          >
-          </i>
-        </span>
-        <span>
-          <i className={
-            product.Rating >= 2
-              ? "fa fa-star"
-              : product.Rating >= 1.5
-                ? "fa fa-star-half-o"
-                : "fa fa-star-o"
-
-          }
-          >
-          </i>
-        </span>
-        <span>
-          <i className={
-            product.Rating >= 3
-              ? "fa fa-star"
-              : product.Rating >= 2.5
-                ? "fa fa-star-half-o"
-                : "fa fa-star-o"
-
-          }
-          >
-          </i>
-        </span>
-        <span>
-          <i className={
-            product.Rating >= 4
-              ? "fa fa-star"
-              : product.Rating >= 3.5
-                ? "fa fa-star-half-o"
-                : "fa fa-star-o"
-
-          }
-          >
-          </i>
-        </span>
-        <span>
-          <i className={
-            product.Rating >= 5
-              ? "fa fa-star"
-              : product.Rating >= 4.5
-                ? "fa fa-star-half-o"
-                : "fa fa-star-o"
-
-          }
-          >
-          </i>
-        </span>
-         
-        </div>
-        <p>{product.Rating}</p>
+        <Ratings rating={product.rating} />
        
     </div>
     
@@ -96,7 +61,9 @@ export default function Content() {
        
             
         </div>
-       
+        )
+      }
+        </div>
         
     )
 }

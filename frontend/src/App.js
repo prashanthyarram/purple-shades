@@ -2,25 +2,23 @@ import './App.css'
 import Header from './Header'
 import Footer from './Footer'
 import Content from './Content'
-import Login from './login'
+import Login from './Login'
 import Productdisplay from './Productdisplay.js'
-import Signup from './signup.js'
-import data from './data'
-
+import Signup from './Signup.js';
+import Cart from './Cart.js'
+import Registerproduct from './Registerproduct'
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 
 } from 'react-router-dom'
-import productdisplay from './Productdisplay'
+
+
 
 function App() {
- 
   return (
-
     <>
 
       <Router>
@@ -30,8 +28,19 @@ function App() {
             <Content />
             <Footer />
           </Route>
-          <Route exact path="/login">
+         
+          <Route path="/cart/:_id" >
+          <Cart/>
+          </Route>
+          <Route exact path='/cart'>
+             <Cart/>
+          </Route>
+          <Route exact path='/registerproduct'>
+             <Registerproduct/>
+          </Route>
 
+          <Route exact path="/login">
+          <Header />
             <Login />
             <Footer />
           </Route>
@@ -40,7 +49,7 @@ function App() {
             <Signup />
             <Footer />
           </Route>
-          <Route exact path="/product/:id" component={Productdisplay} />
+          <Route exact path="/api/products/:_id" component={Productdisplay} />
             
             
 
