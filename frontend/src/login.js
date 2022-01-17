@@ -47,8 +47,8 @@ export default function Login(props) {
         return (
 <>
           <div className='usr'>
-          <nav className='navbar navbar-light bg-light'>
-                    <h6 className='navbar-brand'>My Account</h6>
+          <nav className='navbar'>
+                    <h6 className='navbar-brand cont'>My Account</h6>
                 </nav>
               <h5>User Info</h5>
               <p id='name'>Name : {isloggedin.name}</p>

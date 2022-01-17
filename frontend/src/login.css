@@ -35,3 +35,7 @@ margin-bottom: 100px;
    text-decoration: none;
    color: black;
 }
+.cont{
+    position: absolute;
+    left: 560px;
+}

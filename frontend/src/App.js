@@ -14,6 +14,11 @@ import {
   Route,
 
 } from 'react-router-dom'
+import Men from './Men.js'
+import Women from './Women'
+import Children from './Children'
+import Accessories from './Accessories'
+import Details from './Details'
 
 
 
@@ -28,33 +33,68 @@ function App() {
             <Content />
             <Footer />
           </Route>
-         
+
           <Route path="/cart/:_id" >
-          <Cart/>
+            <Cart />
           </Route>
+
+
           <Route exact path='/cart'>
-             <Cart/>
+            <Cart />
           </Route>
+
+
           <Route exact path='/registerproduct'>
-             <Registerproduct/>
+            <Registerproduct />
+          </Route>
+
+          <Route exact path='/men'>
+            <Header />
+            <Men />
+            <Footer />
+          </Route>
+
+          <Route exact path='/women'>
+            <Header />
+            <Women />
+            <Footer />
+          </Route>
+
+          <Route exact path='/children'>
+            <Header />
+            <Children />
+            <Footer />
+          </Route>
+
+          <Route exact path='/accessories'>
+            <Header />
+            <Accessories />
+            <Footer />
           </Route>
 
           <Route exact path="/login">
-          <Header />
+
+            <Header />
             <Login />
             <Footer />
           </Route>
-          <Route exact path="/Signup">
 
+          <Route exact path="/Signup">
             <Signup />
             <Footer />
           </Route>
+
+          <Route exact path="/details">
+            <Details/>
+          </Route>
+
+
           <Route exact path="/api/products/:_id" component={Productdisplay} />
-            
-            
+
+
 
         </Switch>
-     </Router>
+      </Router>
     </>
   );
 }

@@ -15,3 +15,16 @@
     padding-left: 420px;
     position: relative;
 }
+.created{
+position: absolute;
+bottom: 0px;
+left: 0px;
+color: rgba(245, 245, 245, 0.144);
+}
+.link{
+ text-decoration: none;
+ color: rgba(245, 245, 245, 0.144);
+ position: absolute;
+ bottom: 0px;
+ left: 40px;
+}
